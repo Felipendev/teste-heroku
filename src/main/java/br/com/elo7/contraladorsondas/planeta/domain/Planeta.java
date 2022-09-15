@@ -1,6 +1,7 @@
 package br.com.elo7.contraladorsondas.planeta.domain;
 
 import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import br.com.elo7.contraladorsondas.planeta.application.api.planetaRequest;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,4 +30,11 @@ public class Planeta {
 	private int limiteX;
 	@NotNull
 	private int limiteY;
+
+	public Planeta(planetaRequest planetaRequest) {
+		this.nomePlaneta = planetaRequest.getNomePlaneta();
+		this.limiteX = planetaRequest.getLimiteX();
+		this.limiteY = planetaRequest.getLimiteY();
+	}
 }
+

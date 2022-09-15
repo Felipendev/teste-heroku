@@ -3,16 +3,24 @@ package br.com.elo7.contraladorsondas.planeta.application.service;
 import org.springframework.stereotype.Service;
 import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaResponse;
 import br.com.elo7.contraladorsondas.planeta.application.api.planetaRequest;
+import br.com.elo7.contraladorsondas.planeta.application.repository.PlanetaRepository;
+import br.com.elo7.contraladorsondas.planeta.domain.Planeta;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 @Service
 @Log4j2
+@RequiredArgsConstructor
 public class PlanetaApplicationService implements PlanetaService{
+	private final PlanetaRepository planetaRepository;
 
 	@Override
 	public PlanetaResponse criaPlaneta(planetaRequest planetaRequest) {
 		log.info("[inicia] PlanetaApplicationService - criaPlaneta");
+		Planeta planeta = planetaRepository.salva(new Planeta(planetaRequest));
 		log.info("[finaliza] PlanetaApplicationService - criaPlaneta");
-		return null;
+		return PlanetaResponse.builder()
+				.idPlaneta(planeta.getIdPlaneta())
+				.build();
 	}
 }
