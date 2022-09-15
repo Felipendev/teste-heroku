@@ -1,6 +1,8 @@
 package br.com.elo7.contraladorsondas.planeta.application.service;
 
+import java.util.List;
 import org.springframework.stereotype.Service;
+import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaListResponse;
 import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaResponse;
 import br.com.elo7.contraladorsondas.planeta.application.api.planetaRequest;
 import br.com.elo7.contraladorsondas.planeta.application.repository.PlanetaRepository;
@@ -22,5 +24,12 @@ public class PlanetaApplicationService implements PlanetaService{
 		return PlanetaResponse.builder()
 				.idPlaneta(planeta.getIdPlaneta())
 				.build();
+	}
+
+	@Override
+	public List<PlanetaListResponse> buscaTodosPlanetas() {
+		log.info("[inicia] PlanetaApplicationService - buscaTodosPlanetas");
+		log.info("[finaliza] PlanetaApplicationService - buscaTodosPlanetas");
+		return null;
 	}
 }

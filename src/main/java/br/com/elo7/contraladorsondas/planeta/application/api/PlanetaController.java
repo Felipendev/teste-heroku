@@ -1,5 +1,7 @@
 package br.com.elo7.contraladorsondas.planeta.application.api;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.elo7.contraladorsondas.planeta.application.service.PlanetaService;
@@ -18,5 +20,13 @@ public class PlanetaController implements PlanetaAPI {
 		PlanetaResponse planetaCriado = planetaService.criaPlaneta(planetaRequest);
 		log.info("[finaliza] PlanetaController - postPlaneta");
 		return planetaCriado;
+	}
+
+	@Override
+	public List<PlanetaListResponse> getTodosPlaneta() {
+		log.info("[inicia] ClienteController - getTodosCliente");
+		List<PlanetaListResponse> planetas = planetaService.buscaTodosPlanetas();
+		log.info("[finaliza] ClienteController - getTodosCliente");
+		return planetas;
 	}
 }
