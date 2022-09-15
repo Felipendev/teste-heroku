@@ -29,7 +29,8 @@ public class PlanetaApplicationService implements PlanetaService{
 	@Override
 	public List<PlanetaListResponse> buscaTodosPlanetas() {
 		log.info("[inicia] PlanetaApplicationService - buscaTodosPlanetas");
+		List<Planeta> planeta = planetaRepository.buscaTodosPlanetas();
 		log.info("[finaliza] PlanetaApplicationService - buscaTodosPlanetas");
-		return null;
+		return PlanetaListResponse.converte(planeta);
 	}
 }
