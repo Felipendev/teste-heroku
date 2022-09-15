@@ -33,7 +33,8 @@ public class PlanetaController implements PlanetaAPI {
 	public PlanetaDetalhadoResponse getPlanetaAtravesId(UUID idPlaneta) {
 		log.info("[inicia] PlanetaController - getPlanetaAtravesId");
 		log.info("[idPlaneta] {}", idPlaneta);
+		PlanetaDetalhadoResponse planetaDetalhado = planetaService.buscaClienteAtravesID(idPlaneta);
 		log.info("[finaliza] PlanetaController - getPlanetaAtravesId");	
-		return null;
+		return planetaDetalhado;
 	}
 }
