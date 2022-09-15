@@ -33,7 +33,9 @@ public class PlanetaInfraRepository implements PlanetaRepository {
 	@Override
 	public Planeta buscaPlanetaAtravesId(UUID idPlaneta) {
 		log.info("[inicia]PlanetaInfraRepository - buscaPlanetaAtravesId");
+		Planeta planeta = planetaSpringDataJPARepository.findById(idPlaneta)
+				.orElseThrow(() -> new RuntimeException("Planeta não encontrado!"));
 		log.info("[finaliza]PlanetaInfraRepository - buscaPlanetaAtravesId");
-		return null;
+		return planeta;
 	}
 }
