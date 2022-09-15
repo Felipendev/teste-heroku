@@ -43,4 +43,10 @@ public class PlanetaApplicationService implements PlanetaService{
 		log.info("[finaliza] PlanetaApplicationService - buscaClienteAtravesID");
 		return new PlanetaDetalhadoResponse(planeta);
 	}
+
+	@Override
+	public void deletaPlanetaAtravesID(UUID idPlaneta) {
+		log.info("[inicia] PlanetaApplicationService - deletaPlanetaAtravesID");
+		log.info("[finaliza] PlanetaApplicationService - deletaPlanetaAtravesID");
+	}
 }

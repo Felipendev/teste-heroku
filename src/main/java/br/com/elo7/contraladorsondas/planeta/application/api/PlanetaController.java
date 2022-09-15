@@ -42,6 +42,7 @@ public class PlanetaController implements PlanetaAPI {
 	public void deletaPlanetaAtravesId(UUID idPlaneta) {
 		log.info("[inicia] PlanetaController - deletaPlanetaAtravesId");
 		log.info("[idPlaneta] {}", idPlaneta);
+		planetaService.deletaPlanetaAtravesID(idPlaneta);
 		log.info("[finaliza] PlanetaController - deletaPlanetaAtravesId");
 	}
 }

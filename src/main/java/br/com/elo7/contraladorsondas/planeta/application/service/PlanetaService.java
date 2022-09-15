@@ -11,4 +11,5 @@ public interface PlanetaService {
 	PlanetaResponse criaPlaneta(planetaRequest planetaRequest);
 	List<PlanetaListResponse> buscaTodosPlanetas();
 	PlanetaDetalhadoResponse buscaClienteAtravesID(UUID idPlaneta);
+	void deletaPlanetaAtravesID(UUID idPlaneta);
 }
