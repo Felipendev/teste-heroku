@@ -42,6 +42,7 @@ public class PlanetaInfraRepository implements PlanetaRepository {
 	@Override
 	public void deletaPlaneta(Planeta planeta) {
 		log.info("[inicia]PlanetaInfraRepository - deletaPlaneta");
+		planetaSpringDataJPARepository.delete(planeta);
 		log.info("[finaliza]PlanetaInfraRepository - deletaPlaneta");
 	}
 }
