@@ -38,4 +38,10 @@ public class PlanetaInfraRepository implements PlanetaRepository {
 		log.info("[finaliza]PlanetaInfraRepository - buscaPlanetaAtravesId");
 		return planeta;
 	}
+
+	@Override
+	public void deletaPlaneta(Planeta planeta) {
+		log.info("[inicia]PlanetaInfraRepository - deletaPlaneta");
+		log.info("[finaliza]PlanetaInfraRepository - deletaPlaneta");
+	}
 }

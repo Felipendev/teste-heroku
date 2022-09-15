@@ -47,6 +47,8 @@ public class PlanetaApplicationService implements PlanetaService{
 	@Override
 	public void deletaPlanetaAtravesID(UUID idPlaneta) {
 		log.info("[inicia] PlanetaApplicationService - deletaPlanetaAtravesID");
+		Planeta planeta = planetaRepository.buscaPlanetaAtravesId(idPlaneta);
+		planetaRepository.deletaPlaneta(planeta);
 		log.info("[finaliza] PlanetaApplicationService - deletaPlanetaAtravesID");
 	}
 }

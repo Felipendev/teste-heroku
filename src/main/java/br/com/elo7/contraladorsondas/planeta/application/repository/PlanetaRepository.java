@@ -8,4 +8,5 @@ public interface PlanetaRepository {
 	Planeta salva(Planeta planeta);
 	List<Planeta> buscaTodosPlanetas();
 	Planeta buscaPlanetaAtravesId(UUID idPlaneta);
+	void deletaPlaneta(Planeta planeta);
 }
