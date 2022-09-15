@@ -39,7 +39,8 @@ public class PlanetaApplicationService implements PlanetaService{
 	@Override
 	public PlanetaDetalhadoResponse buscaClienteAtravesID(UUID idPlaneta) {
 		log.info("[inicia] PlanetaApplicationService - buscaClienteAtravesID");
+		Planeta planeta = planetaRepository.buscaPlanetaAtravesId(idPlaneta);
 		log.info("[finaliza] PlanetaApplicationService - buscaClienteAtravesID");
-		return null;
+		return new PlanetaDetalhadoResponse(planeta);
 	}
 }

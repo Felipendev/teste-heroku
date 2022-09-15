@@ -1,6 +1,7 @@
 package br.com.elo7.contraladorsondas.planeta.infra;
 
 import java.util.List;
+import java.util.UUID;
 import org.springframework.stereotype.Repository;
 import br.com.elo7.contraladorsondas.planeta.application.repository.PlanetaRepository;
 import br.com.elo7.contraladorsondas.planeta.domain.Planeta;
@@ -27,5 +28,12 @@ public class PlanetaInfraRepository implements PlanetaRepository {
 		List<Planeta> todosPlanetas = planetaSpringDataJPARepository.findAll();
 		log.info("[finaliza]PlanetaInfraRepository - buscaTodosPlanetas");
 		return todosPlanetas;
+	}
+
+	@Override
+	public Planeta buscaPlanetaAtravesId(UUID idPlaneta) {
+		log.info("[inicia]PlanetaInfraRepository - buscaPlanetaAtravesId");
+		log.info("[finaliza]PlanetaInfraRepository - buscaPlanetaAtravesId");
+		return null;
 	}
 }
