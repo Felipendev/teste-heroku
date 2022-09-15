@@ -24,7 +24,8 @@ public class PlanetaInfraRepository implements PlanetaRepository {
 	@Override
 	public List<Planeta> buscaTodosPlanetas() {
 		log.info("[inicia]PlanetaInfraRepository - buscaTodosPlanetas");
+		List<Planeta> todosPlanetas = planetaSpringDataJPARepository.findAll();
 		log.info("[finaliza]PlanetaInfraRepository - buscaTodosPlanetas");
-		return null;
+		return todosPlanetas;
 	}
 }
