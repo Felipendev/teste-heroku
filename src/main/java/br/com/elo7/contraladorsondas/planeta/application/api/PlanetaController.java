@@ -37,4 +37,11 @@ public class PlanetaController implements PlanetaAPI {
 		log.info("[finaliza] PlanetaController - getPlanetaAtravesId");	
 		return planetaDetalhado;
 	}
+
+	@Override
+	public void deletaPlanetaAtravesId(UUID idPlaneta) {
+		log.info("[inicia] PlanetaController - deletaPlanetaAtravesId");
+		log.info("[idPlaneta] {}", idPlaneta);
+		log.info("[finaliza] PlanetaController - deletaPlanetaAtravesId");
+	}
 }
