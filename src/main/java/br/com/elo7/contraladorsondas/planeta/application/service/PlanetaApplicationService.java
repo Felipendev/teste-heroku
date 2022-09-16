@@ -2,7 +2,9 @@ package br.com.elo7.contraladorsondas.planeta.application.service;
 
 import java.util.List;
 import java.util.UUID;
+import javax.validation.Valid;
 import org.springframework.stereotype.Service;
+import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaAlteracaoRequest;
 import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaDetalhadoResponse;
 import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaListResponse;
 import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaResponse;
@@ -50,5 +52,14 @@ public class PlanetaApplicationService implements PlanetaService{
 		Planeta planeta = planetaRepository.buscaPlanetaAtravesId(idPlaneta);
 		planetaRepository.deletaPlaneta(planeta);
 		log.info("[finaliza] PlanetaApplicationService - deletaPlanetaAtravesID");
+	}
+
+	@Override
+	public void patchAlteraPlaneta(UUID idPlaneta, @Valid PlanetaAlteracaoRequest planetaAlteracaoRequest) {
+		log.info("[inicia] PlanetaApplicationService - patchAlteraPlaneta");
+		Planeta planeta = planetaRepository.buscaPlanetaAtravesId(idPlaneta);
+		planeta.altera(planetaAlteracaoRequest);
+		planetaRepository.salva(planeta);
+		log.info("[finaliza] PlanetaApplicationService - patchAlteraPlaneta");
 	}
 }

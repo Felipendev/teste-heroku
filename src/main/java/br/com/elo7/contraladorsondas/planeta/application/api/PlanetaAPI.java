@@ -6,6 +6,7 @@ import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,4 +32,9 @@ public interface PlanetaAPI {
 	@DeleteMapping(value = "/{idPlaneta}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	void deletaPlanetaAtravesId(@PathVariable UUID idPlaneta);
+	
+	@PatchMapping(value = "/{idPlaneta}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	void patchAlteraPlaneta(@PathVariable UUID idPlaneta,
+			@Valid @RequestBody PlanetaAlteracaoRequest planetaAlteracaoRequest);
 }
