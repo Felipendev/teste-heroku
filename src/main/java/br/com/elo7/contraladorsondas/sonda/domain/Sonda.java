@@ -1,38 +1,42 @@
 package br.com.elo7.contraladorsondas.sonda.domain;
 
-import br.com.elo7.contraladorsondas.sonda.application.api.SondaAlteracaoRequest;
-import br.com.elo7.contraladorsondas.sonda.application.api.SondaRequest;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-@Data
+@Getter
 @Entity
 public class Sonda {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "uuid", name = "idSonda", updatable = false, unique = true, nullable = false)
     private UUID idSonda;
+    private String nome;
     @NotNull
-    private int posicaoX;
-    @NotNull
-    private int posicaoY;
-    @NotNull
-    private Direcao direcao;
+    private PosicaoSonda posicao;
+    
+    private LocalDateTime criacao;
+    private LocalDateTime alteracao;
 
-    public Sonda(SondaRequest sondaRequest) {
-        this.posicaoX = sondaRequest.getPosicaoX();
-        this.posicaoY = sondaRequest.getPosicaoY();
-        this.direcao = sondaRequest.getDirecao();
+
+    public Sonda(String nome) {
+    	this.nome = nome;
+    	this.criacao = LocalDateTime.now();
     }
-    public void altera(SondaAlteracaoRequest sondaAlteracaoRequest) {
-        this.posicaoX = sondaAlteracaoRequest.getPosicaoX();
-        this.posicaoY = sondaAlteracaoRequest.getPosicaoY();
-        this.direcao = sondaAlteracaoRequest.getDirecao();
+    
+    public void renomeia(String nome) {
+    	this.nome = nome;
+    	this.alteracao = LocalDateTime.now();
     }
 }
