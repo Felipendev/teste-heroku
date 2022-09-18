@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
-import br.com.elo7.contraladorsondas.planeta.application.api.PousoSondaPlanetaRequest;
+import br.com.elo7.contraladorsondas.planeta.application.api.pouso.PousoSondaPlanetaRequest;
 
 public interface PousoService {
 	void pousa(UUID idPlaneta, @Valid PousoSondaPlanetaRequest pousoRequest);

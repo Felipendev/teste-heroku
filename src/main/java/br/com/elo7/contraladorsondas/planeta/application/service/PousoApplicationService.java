@@ -6,7 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.stereotype.Service;
 
-import br.com.elo7.contraladorsondas.planeta.application.api.PousoSondaPlanetaRequest;
+import br.com.elo7.contraladorsondas.planeta.application.api.pouso.PousoSondaPlanetaRequest;
 import br.com.elo7.contraladorsondas.planeta.application.repository.PlanetaRepository;
 import br.com.elo7.contraladorsondas.sonda.application.repository.SondaRepository;
 import br.com.elo7.contraladorsondas.sonda.domain.Sonda;
