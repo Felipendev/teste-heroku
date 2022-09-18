@@ -53,4 +53,9 @@ public class Sonda {
 		this.posicao = pousoRequest.getPosicaoSonda();
 		this.momentoPouso = LocalDateTime.now();
 	}
+
+	public void recebeComando(String comando) {
+		// TODO Auto-generated method stub
+		
+	}
 }
