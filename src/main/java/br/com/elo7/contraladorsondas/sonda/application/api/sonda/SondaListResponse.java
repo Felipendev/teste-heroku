@@ -1,4 +1,4 @@
-package br.com.elo7.contraladorsondas.sonda.application.api;
+package br.com.elo7.contraladorsondas.sonda.application.api.sonda;
 
 import java.util.List;
 import java.util.stream.Collectors;

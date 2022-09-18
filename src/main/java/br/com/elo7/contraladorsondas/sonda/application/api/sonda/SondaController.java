@@ -1,4 +1,4 @@
-package br.com.elo7.contraladorsondas.sonda.application.api;
+package br.com.elo7.contraladorsondas.sonda.application.api.sonda;
 
 import br.com.elo7.contraladorsondas.sonda.application.service.SondaService;
 import lombok.RequiredArgsConstructor;
