@@ -19,7 +19,7 @@ public class SondaApplicationService implements SondaService {
     @Override
     public SondaResponse criaSonda(SondaRequest sondaRequest) {
         log.info("[inicia] SondaApplicationService - criaSonda");
-        Sonda sonda = sondaRepository.salva(new Sonda(sondaRequest));
+        Sonda sonda = sondaRepository.salva(new Sonda(sondaRequest.getNome()));
         log.info("[finaliza] SondaApplicationService - criaSonda");
         return SondaResponse.builder().idSonda(sonda.getIdSonda()).build();
     }
@@ -52,7 +52,7 @@ public class SondaApplicationService implements SondaService {
     public void patchAlteraSonda(UUID idSonda, SondaAlteracaoRequest sondaAlteracaoRequest) {
         log.info("[inicia] SondaApplicationService - patchAlteraSonda");
         Sonda sonda = sondaRepository.buscaSondaAtravesId(idSonda);
-        sonda.altera(sondaAlteracaoRequest);
+        sonda.renomeia(sondaAlteracaoRequest.getNome());
         sondaRepository.salva(sonda);
         log.info("[inicia] SondaApplicationService - patchAlteraSonda");
 

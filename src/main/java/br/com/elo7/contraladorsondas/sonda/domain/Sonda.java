@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -22,8 +22,8 @@ public class Sonda {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "uuid", name = "idSonda", updatable = false, unique = true, nullable = false)
     private UUID idSonda;
+    @NotBlank
     private String nome;
-    @NotNull
     private PosicaoSonda posicao;
     
     private LocalDateTime criacao;
