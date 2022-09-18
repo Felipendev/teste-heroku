@@ -4,11 +4,12 @@ import java.util.List;
 import java.util.UUID;
 import javax.validation.Valid;
 import org.springframework.stereotype.Service;
-import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaAlteracaoRequest;
-import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaDetalhadoResponse;
-import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaListResponse;
-import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaResponse;
-import br.com.elo7.contraladorsondas.planeta.application.api.planetaRequest;
+
+import br.com.elo7.contraladorsondas.planeta.application.api.planeta.PlanetaAlteracaoRequest;
+import br.com.elo7.contraladorsondas.planeta.application.api.planeta.PlanetaDetalhadoResponse;
+import br.com.elo7.contraladorsondas.planeta.application.api.planeta.PlanetaListResponse;
+import br.com.elo7.contraladorsondas.planeta.application.api.planeta.PlanetaResponse;
+import br.com.elo7.contraladorsondas.planeta.application.api.planeta.planetaRequest;
 import br.com.elo7.contraladorsondas.planeta.application.repository.PlanetaRepository;
 import br.com.elo7.contraladorsondas.planeta.domain.Planeta;
 import lombok.RequiredArgsConstructor;

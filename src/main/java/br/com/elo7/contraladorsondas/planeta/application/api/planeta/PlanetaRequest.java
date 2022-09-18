@@ -1,15 +1,15 @@
-package br.com.elo7.contraladorsondas.planeta.application.api;
+package br.com.elo7.contraladorsondas.planeta.application.api.planeta;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import lombok.Value;
 
 @Value
-public class planetaRequest {
+public class PlanetaRequest {
 	@NotBlank
 	private String nomePlaneta;
 	@NotNull
-	private int limiteX;
+	private Integer limiteX;
 	@NotNull
-	private int limiteY;
+	private Integer limiteY;
 }

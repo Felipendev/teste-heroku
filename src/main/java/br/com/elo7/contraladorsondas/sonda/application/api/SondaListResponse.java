@@ -16,6 +16,7 @@ public class SondaListResponse {
                 .map(SondaListResponse::new)
                 .collect(Collectors.toList());
     }
+    
     public SondaListResponse(Sonda sonda) {
         this.nome = sonda.getNome();
         this.posicao = sonda.getPosicao();

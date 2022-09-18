@@ -8,8 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import br.com.elo7.contraladorsondas.planeta.application.api.PlanetaAlteracaoRequest;
-import br.com.elo7.contraladorsondas.planeta.application.api.planetaRequest;
+
+import br.com.elo7.contraladorsondas.planeta.application.api.planeta.PlanetaAlteracaoRequest;
+import br.com.elo7.contraladorsondas.planeta.application.api.planeta.planetaRequest;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;

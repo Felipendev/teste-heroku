@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/v1/planeta")
 public interface PousoSondaPlanetaAPI {	
-	@PostMapping(value = "/{idPlaneta}")
+	@PostMapping(value = "/{idPlaneta}/pouso")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	void patchAlteraPlaneta(@PathVariable UUID idPlaneta,
-			@Valid @RequestBody PousoSondaPlanetaRequest planetaAlteracaoRequest);
+	void postPousoSondaPlaneta(@PathVariable UUID idPlaneta,
+			@Valid @RequestBody PousoSondaPlanetaRequest pousoRequest);
 }

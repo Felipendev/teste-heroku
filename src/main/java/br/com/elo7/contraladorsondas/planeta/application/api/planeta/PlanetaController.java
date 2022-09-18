@@ -1,4 +1,4 @@
-package br.com.elo7.contraladorsondas.planeta.application.api;
+package br.com.elo7.contraladorsondas.planeta.application.api.planeta;
 
 import java.util.List;
 import java.util.UUID;

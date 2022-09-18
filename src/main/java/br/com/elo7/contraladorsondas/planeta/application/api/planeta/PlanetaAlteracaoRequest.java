@@ -1,4 +1,4 @@
-package br.com.elo7.contraladorsondas.planeta.application.api;
+package br.com.elo7.contraladorsondas.planeta.application.api.planeta;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

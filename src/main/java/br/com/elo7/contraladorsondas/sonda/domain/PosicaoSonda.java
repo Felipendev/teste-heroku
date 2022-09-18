@@ -1,10 +1,20 @@
 package br.com.elo7.contraladorsondas.sonda.domain;
 
-import lombok.Value;
+import javax.persistence.Embeddable;
 
-@Value
+import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
+@ToString
+@EqualsAndHashCode
+@Embeddable
 public class PosicaoSonda {
-	private final Integer posicaoX;
-	private final Integer posicaoY;
-	private final DirecaoSonda direcao;
+	private Integer posicaoX;
+	private Integer posicaoY;
+	private DirecaoSonda direcao;
 }
