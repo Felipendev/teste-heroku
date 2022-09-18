@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public interface PlanetaAPI {
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	PlanetaResponse postPlaneta(@Valid @RequestBody planetaRequest planetaRequest);
+	PlanetaResponse postPlaneta(@Valid @RequestBody PlanetaRequest planetaRequest);
 	
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
