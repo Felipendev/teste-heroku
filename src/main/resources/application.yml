@@ -14,7 +14,8 @@ spring:
       ddl-auto: update
   datasource:
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/mydb
-    username: foo
-    password: bar
+    url: jdbc:postgresql://ec2-52-207-90-231.compute-1.amazonaws.com/d62lec0gnnq85a
+    port: 5432
+    username: dxmmxaimqpwrnr
+    password: 8294438a0f226e6fd3297067a943afe98f686de42529ee4f6d64aa07642bd083
     driverClassName: org.postgresql.Driver
