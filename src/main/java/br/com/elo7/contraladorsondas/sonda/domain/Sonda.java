@@ -14,6 +14,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 import br.com.elo7.contraladorsondas.planeta.application.api.pouso.PousoSondaPlanetaRequest;
+import br.com.elo7.contraladorsondas.sonda.application.api.sonda.SondaRequest;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,7 +27,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @Entity
-@Builder(access = AccessLevel.PACKAGE)
+@Builder
 public class Sonda {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,17 +35,13 @@ public class Sonda {
     private UUID idSonda;
     @NotBlank
     private String nome;
-    
     @Embedded
     private PosicaoSonda posicao;
-    
     private LocalDateTime criacao;
     private LocalDateTime alteracao;
     private LocalDateTime momentoPouso;
-    
 	private UUID idPlanetaPousada;
-
-
+	
     public Sonda(String nome) {
     	this.nome = nome;
     	this.criacao = LocalDateTime.now();
